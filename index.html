@@ -1,91 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
-<meta name="theme-color" content="#0c0b0a"/>
-<title>HOMIES²</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
-<style>
-:root{--bg:#0c0b0a;--bg2:#161311;--bg3:#1e1a17;--line:rgba(255,236,210,.08);--text:#f4ece3;--muted:#9a8e82;--accent:#e8a35a;--a2:#f0c48a;--ok:#7dcea0;--sb:env(safe-area-inset-bottom,12px);--st:env(safe-area-inset-top,12px)}
-*{box-sizing:border-box;margin:0;padding:0}html,body{height:100%}
-body{background:var(--bg);color:var(--text);font-family:IBM Plex Sans,system-ui,sans-serif;overflow:hidden}
-button,input,textarea{font-family:inherit;color:inherit;border:0;background:none}
-button{cursor:pointer}#app{height:100dvh;max-width:520px;margin:0 auto;position:relative;background:radial-gradient(1200px 500px at 50% -10%,rgba(232,163,90,.12),transparent 55%),var(--bg)}
-.screen{position:absolute;inset:0;display:flex;flex-direction:column}
-.boot{padding:calc(var(--st) + 36px) 24px 32px;justify-content:space-between}
-.mark{font-family:Syne,sans-serif;font-weight:800;letter-spacing:-.04em;font-size:42px;line-height:.9}
-.mark span{color:var(--accent)}.lede{margin-top:14px;color:var(--muted);font-size:16px;line-height:1.5;max-width:20em}
-.field label{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:18px 0 8px}
-.field input{width:100%;background:var(--bg2);border:1px solid var(--line);border-radius:16px;padding:16px 18px;font-size:18px;outline:none}
-.cta{margin-top:14px;width:100%;background:var(--accent);color:#1a1208;font-family:Syne,sans-serif;font-weight:700;padding:16px;border-radius:16px}
-.top{padding:calc(var(--st) + 10px) 16px 12px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--line);background:rgba(12,11,10,.86)}
-.top h1{font-family:Syne,sans-serif;font-size:20px;letter-spacing:-.03em}.sub{color:var(--muted);font-size:12px}
-.icon-btn{width:40px;height:40px;border-radius:12px;background:var(--bg2);display:grid;place-items:center}
-.grow{flex:1;min-width:0}.scroll{flex:1;overflow-y:auto;padding:8px 14px calc(88px + var(--sb))}
-.group-card,.homie-row,.you-card{display:flex;gap:12px;align-items:center;width:100%;text-align:left;padding:12px;border-radius:18px}
-.group-card{background:linear-gradient(135deg,#2a2118,#1a1613 60%);border:1px solid rgba(232,163,90,.2);margin-bottom:12px}
-.av{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;font-family:Syne,sans-serif;font-weight:800;color:#1a1208;flex:0 0 auto;position:relative}
-.dot{width:10px;height:10px;border-radius:50%;background:var(--ok);border:2px solid var(--bg);position:absolute;right:-1px;bottom:-1px}
-.name{font-weight:600}.meta{color:var(--muted);font-size:13px;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.mood{margin-left:auto;font-size:11px;color:var(--a2);background:rgba(232,163,90,.1);padding:5px 8px;border-radius:999px}
-.msgs{flex:1;overflow-y:auto;padding:16px 14px;display:flex;flex-direction:column;gap:10px}
-.bubble{max-width:84%;padding:10px 13px;border-radius:18px;line-height:1.45;font-size:15px}
-.them{background:var(--bg3);border-bottom-left-radius:6px;align-self:flex-start}
-.me{background:var(--accent);color:#1a1208;border-bottom-right-radius:6px;align-self:flex-end}
-.who{font-size:11px;font-weight:600;margin-bottom:4px}.time{display:block;font-size:10px;opacity:.55;margin-top:6px}
-.composer{padding:8px 12px calc(var(--sb) + 10px);display:flex;gap:8px;border-top:1px solid var(--line)}
-.composer textarea{flex:1;resize:none;max-height:120px;background:var(--bg2);border:1px solid var(--line);border-radius:16px;padding:12px 14px;font-size:16px;outline:none}
-.send{width:44px;height:44px;border-radius:14px;background:var(--accent);color:#1a1208;display:grid;place-items:center;font-weight:700}
-.chips{display:flex;gap:8px;overflow-x:auto;padding:8px 12px 0}.chip{flex:0 0 auto;background:var(--bg2);border:1px solid var(--line);border-radius:999px;padding:8px 12px;font-size:13px;color:var(--a2)}
-.nav{position:absolute;left:14px;right:14px;bottom:calc(var(--sb) + 10px);background:#1a1613;border:1px solid var(--line);border-radius:20px;display:grid;grid-template-columns:1fr 1fr 1fr;padding:8px;z-index:5}
-.nav button{padding:10px 0 8px;border-radius:14px;color:var(--muted);font-size:11px;text-transform:uppercase}
-.nav button.on{background:var(--bg);color:var(--a2)}.nav b{display:block;font-size:16px;font-family:Syne,sans-serif;text-transform:none}
-.bio{color:#d7cdc2;line-height:1.6;padding:0 8px 24px}.bar{height:8px;background:#2a241f;border-radius:99px;overflow:hidden;margin-top:8px}.bar>i{display:block;height:100%;background:var(--accent)}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0c0b0a" />
+  <title>HOMIES²</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
 </head>
-<body><div id="app"></div>
-<script>
-const H=[
-{id:'jace',name:'Jace',full:'Jace Morales',role:'The connector',mood:'outside energy',color:'#e8a35a',bio:'Shows up. Short sentences. Will pull up at 1am.',intents:['hangout','sports','greet']},
-{id:'nia',name:'Nia',full:'Nia Brooks',role:'The truth',mood:'locked in',color:'#d4a574',bio:'Will roast you, then send a job listing.',intents:['advice','work','vent']},
-{id:'keys',name:'Keys',full:'Kian Park',role:'The night shift',mood:'in the lab',color:'#9b8cff',bio:'Producer brain. Best listener after midnight.',intents:['music','night','lonely']},
-{id:'dre',name:'Dre',full:'Andre Wallace',role:'Big brother',mood:'cooking',color:'#7dcea0',bio:'Gravity. Food. The practical answer.',intents:['food','advice','family']},
-{id:'lina',name:'Lina',full:'Lina Ortega',role:'Chaos gremlin',mood:'unhinged support',color:'#e07a5f',bio:'Hype, snacks, 14-message rants in your favor.',intents:['joke','happy','hangout']}
-];
-const KEY='homies2.v1';
-const BANK={
-jace:{greet:['Yo. You good or you looking for trouble.'],chat:['I hear you. What\'s the move then.'],hangout:['Say less. I\'ll pull up. You driving or am I.'],sad:['Come through. Don\'t sit in that room by yourself.'],advice:['Do the honest version. The clever version is how you stay stuck.'],food:['Where we eating. If you say salad I\'m hanging up.'],work:['If the job\'s eating you we make a plan. Tonight you don\'t drown.']},
-nia:{greet:['Hey. Don\'t only text when the day is on fire.'],chat:['Okay. And what do you want to do about that.'],advice:['Pick the option you can defend in six months.'],work:['Your job is not your personality. Do it well, then go home.'],sad:['Not every feeling needs a fix tonight. Some need a witness.'],hangout:['Low-key only. I\'m not staying past sloppy.']},
-keys:{greet:['hey. was in a loop. popped out.'],chat:['mm. say more. the quiet part.'],music:['send it. if it has feeling I\'ll sit with it.'],night:['3am is when the mix makes sense.'],sad:['you don\'t have to turn it into a lesson tonight.'],lonely:['I can sit in it with you. no fix required.']},
-dre:{greet:['You eat today.'],chat:['Alright. I\'m with you.'],food:['I got a pot on. Come through. No performance.'],advice:['Do the next right small thing. Not the whole life tonight.'],sad:['Come sit. You won\'t be alone with it.'],family:['You can love people and still need space.']},
-lina:{greet:['HI I missed your whole face.'],chat:['ok wait tell me everything including the dumb details.'],joke:['you\'re lucky you\'re cute in the spiritual sense.'],happy:['AHHHHH we are keeping this timeline.'],sad:['come here. you don\'t have to be funny back.'],hangout:['YES I just want us in the same zip code.']}
-};
-const pick=a=>a[Math.floor(Math.random()*a.length)];
-const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&','<':'<','>':'>','"':'"','\'':'&#39;'}[c]));
-const homie=id=>H.find(x=>x.id===id);
-function load(){try{return Object.assign({userName:'',facts:[],vibe:'neutral',affinity:{},threads:{group:seed()}},JSON.parse(localStorage.getItem(KEY)||'{}'))}catch{return {userName:'',facts:[],threads:{group:seed()},affinity:{}}}}
-function seed(){const t=Date.now()-36e5;return[{from:'lina',text:'ok but if nobody picks a spot this weekend i\'m choosing',ts:t},{from:'jace',text:'Suffer how. You always pick the place with no parking.',ts:t+4e4},{from:'dre',text:'I\'ll cook if we stay in. That\'s my bid.',ts:t+8e4},{from:'keys',text:'stay in. I\'ll bring aux.',ts:t+12e4}]}
-function save(){localStorage.setItem(KEY,JSON.stringify(S))}
-let S=load(), view=S.userName?{page:'crew'}:{page:'boot'}, typing=null;
-function thread(id){if(!S.threads[id])S.threads[id]=[];return S.threads[id]}
-function intentOf(t){const s=t.toLowerCase();const m=[['greet',/\b(hey|hi|yo|sup|hello)\b/],['sad',/\b(sad|down|hurt|empty)\b/],['work',/\b(work|job|boss|money|broke)\b/],['food',/\b(eat|eaten|food|hungry|cook)\b/],['music',/\b(song|music|beat|playlist)\b/],['hangout',/\b(hang|pull up|tonight|weekend|plans)\b/],['joke',/\b(joke|roast|lmao|lol)\b/],['night',/\b(can.?t sleep|up late|3am)\b/],['lonely',/\b(lonely|alone|miss you)\b/],['advice',/\b(advice|should i|help me)\b/],['happy',/\b(good news|excited|won|great)\b/]];for(const [n,r] of m) if(r.test(s)) return n;return 'chat'}
-function reply(id,text){const i=intentOf(text);const b=BANK[id];return pick(b[i]||b.chat)+(Math.random()<.4?' What\'s the next hour look like.':'')}
-function who(text,mode,id){if(mode==='dm')return[id];const i=intentOf(text);return H.map(h=>({id:h.id,s:(h.intents.includes(i)?3:0)+Math.random()})).sort((a,b)=>b.s-a.s).slice(0,text.length>40?3:2).map(x=>x.id)}
-function render(){const root=document.getElementById('app');root.innerHTML='';root.append(view.page==='boot'?boot():view.page==='you'?you():view.page==='chat'?chat(view.id):crew())}
-function boot(){const e=document.createElement('section');e.className='screen boot';e.innerHTML=`<div><div class="mark">HOMIES<span>²</span></div><p class="lede">Your crew. One-on-one or the whole Block.</p></div><div class="field"><label>What do they call you</label><input id="n" maxlength="24" placeholder="Your name"><button class="cta" id="go">Step in</button></div>`;e.querySelector('#go').onclick=()=>{const v=e.querySelector('#n').value.trim();if(!v)return;S.userName=v;save();view={page:'crew'};render()};return e}
-function nav(on){const e=document.createElement('nav');e.className='nav';e.innerHTML=`<button data-p="crew" class="${on==='crew'?'on':''}"><b>Crew</b>homies</button><button data-p="group" class="${on==='group'?'on':''}"><b>Block</b>group</button><button data-p="you" class="${on==='you'?'on':''}"><b>You</b>memory</button>`;e.onclick=ev=>{const b=ev.target.closest('button');if(!b)return;view=b.dataset.p==='group'?{page:'chat',id:'group'}:{page:b.dataset.p};render()};return e}
-function last(id){const t=thread(id);if(!t.length)return 'Say what\'s up';const m=t[t.length-1];return (m.from==='me'?'You':homie(m.from).name)+': '+m.text}
-function crew(){const e=document.createElement('section');e.className='screen';e.innerHTML=`<header class="top"><div class="grow"><h1>HOMIES²</h1><div class="sub">Hey ${esc(S.userName.split(' ')[0])}. Crew\'s around.</div></div></header><div class="scroll"><button class="group-card" id="g"><div class="grow"><div class="name">The Block</div><p class="meta" style="color:var(--a2)">${esc(last('group'))}</p></div></button>${H.map(x=>`<button class="homie-row" data-id="${x.id}"><div class="av" style="background:${x.color}">${x.name[0]}<i class="dot"></i></div><div class="grow"><div class="name">${x.name}</div><div class="meta">${esc(last(x.id))}</div></div><div class="mood">${x.mood}</div></button>`).join('')}</div>`;e.querySelector('#g').onclick=()=>{view={page:'chat',id:'group'};render()};e.querySelectorAll('.homie-row').forEach(b=>b.onclick=()=>{view={page:'chat',id:b.dataset.id};render()});e.append(nav('crew'));return e}
-function you(){const e=document.createElement('section');e.className='screen';e.innerHTML=`<header class="top"><div class="grow"><h1>You</h1><div class="sub">Bond with the crew</div></div></header><div class="scroll"><div class="you-card" style="display:block"><b>${esc(S.userName)}</b><div class="meta">vibe: ${esc(S.vibe||'neutral')}</div></div>${H.map(x=>{const a=S.affinity[x.id]||8;return `<div class="you-card" style="display:block"><div style="display:flex;justify-content:space-between"><b>${x.name}</b><span class="meta">${a>=40?'tight':a>=20?'real':'new'}</span></div><div class="bar"><i style="width:${Math.min(100,a)}%"></i></div></div>`}).join('')}<button class="cta" style="background:transparent;color:#e07a5f;border:1px solid #e07a5f" id="wipe">Start over</button></div>`;e.querySelector('#wipe').onclick=()=>{if(confirm('Wipe chats?')){localStorage.removeItem(KEY);S=load();view={page:'boot'};render()}};e.append(nav('you'));return e}
-function chat(id){const g=id==='group';const x=g?null:homie(id);if(!g && !thread(id).length) thread(id).push({from:id,text:pick(BANK[id].greet),ts:Date.now()});
-const e=document.createElement('section');e.className='screen';e.innerHTML=`<header class="top"><button class="icon-btn" id="back">←</button><div class="grow"><h1>${g?'The Block':x.name}</h1><div class="sub">${g?'Jace, Nia, Keys, Dre, Lina':x.role+' \u00b7 '+x.mood}</div></div></header><div class="msgs" id="msgs"></div><div class="chips">${(g?['What\'s the move','Weird day','Dre you cooking']:['Be honest','I need advice','You pulling up']).map(s=>`<button class="chip">${s}</button>`).join('')}</div><form class="composer" id="f"><textarea id="box" rows="1" placeholder="Message ${g?'the Block':x.name}"></textarea><button class="send" type="submit">↑</button></form>`;
-const msgs=e.querySelector('#msgs');
-function paint(){msgs.innerHTML=thread(id).map(m=>m.from==='me'?`<div class="bubble me">${esc(m.text)}</div>`:`<div class="bubble them">${g?`<div class="who" style="color:${homie(m.from).color}">${homie(m.from).name}</div>`:''}${esc(m.text)}</div>`).join('')+(typing?`<div class="meta">${typing==='group'?'crew':homie(typing).name} typing…</div>`:'');msgs.scrollTop=msgs.scrollHeight}
-paint();
-e.querySelector('#back').onclick=()=>{view={page:'crew'};render()};
-e.querySelectorAll('.chip').forEach(c=>c.onclick=()=>{e.querySelector('#box').value=c.textContent});
-e.querySelector('#f').onsubmit=async ev=>{ev.preventDefault();const text=e.querySelector('#box').value.trim();if(!text||typing)return;e.querySelector('#box').value='';thread(id).push({from:'me',text,ts:Date.now()});const targets=who(text,g?'group':'dm',id);targets.forEach(t=>S.affinity[t]=(S.affinity[t]||8)+2);save();typing=g?'group':id;paint();await new Promise(r=>setTimeout(r,500+Math.random()*600));let prev=null;for(let i=0;i<targets.length;i++){const hid=targets[i];typing=hid;paint();await new Promise(r=>setTimeout(r,400+Math.random()*700));thread(id).push({from:hid,text:i===0?reply(hid,text):pick([reply(hid,text),homie(prev).name+' said it. I\'m just here for it.']),ts:Date.now()});prev=hid;save();paint()}typing=null;save();paint()};
-return e}
-render();
-</script></body></html>
+<body>
+  <div id="app"></div>
+  <script src="portraits.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
