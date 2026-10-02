@@ -1,13 +1,15 @@
 # HOMIES²
 
-HOMIES² is a private social space for your people: one-on-one chat, group chat, custom profiles, and a private contact book. The live app is hosted at [homies2.rva.guru](https://homies2.rva.guru/).
+HOMIES² is a private social space for your people: Messenger-style one-on-one and group chat, MySpace-style custom profiles, and a private contact book. The original Homies pet characters are now the avatar identities for real people. The live app is hosted at [homies2.rva.guru](https://homies2.rva.guru/).
 
 ## What shipped
 
 - Repaired the blank production screen caused by the missing `app.js` runtime.
-- Demo onboarding and crew view with The Block group chat.
+- Demo onboarding and Crew view with The Block group chat.
 - Supabase magic-link authentication when an email is supplied.
-- Public profile fields: display name, handle, bio, status, avatar/cover-ready structure, and theme-ready structure.
+- Public profile fields: display name, handle, bio, status, pet avatar, cover-ready structure, and theme-ready structure.
+- Public MySpace-style person profiles connected directly to Messenger chat.
+- Pet-avatar picker so each person can choose Tony, Betty, or Nori as their identity/avatar.
 - Private contact book with E.164 phone normalization.
 - Public profile links schema for Instagram, TikTok, Discord, Snapchat, Spotify, website, and other links.
 - Friend connection schema with pending, accepted, and blocked states.
@@ -43,6 +45,6 @@ Then open `http://localhost:4173`. `config.js` contains the public Supabase URL 
 
 1. Add contact invite links and secure phone-hash matching through an Edge Function.
 2. Add friend request UI and accepted-friend-only DM thread creation.
-3. Add profile links editor, cover/avatar uploads, and theme presets.
+3. Add profile links editor, cover/avatar uploads, custom pet-avatar profiles, and theme presets.
 4. Add push notifications and unread counts.
 5. Add moderation, block/report flows, and privacy controls before broad launch.
