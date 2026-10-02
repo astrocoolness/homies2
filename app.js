@@ -37,7 +37,7 @@
   function avatar(p, cls='avatar') { return `<div class="${cls}" style="background:${p.color||'#e8a35a'}">${esc(initials(p))}<i class="dot ${p.online===false?'off':''}"></i></div>`; }
   function nav(on) { return `<nav class="nav"><button data-page="crew" class="${on==='crew'?'on':''}"><b>⌂</b>Crew</button><button data-page="discover" class="${on==='discover'?'on':''}"><b>＋</b>Find</button><button data-page="you" class="${on==='you'?'on':''}"><b>◎</b>You</button></nav>`; }
   function wireNav(root) { root.querySelectorAll('[data-page]').forEach(b=>b.onclick=()=>{ route={page:b.dataset.page}; render(); }); }
-  function render() { const root=document.getElementById('app'); root.innerHTML = route.page==='boot'?boot():route.page==='crew'?crew():route.page==='chat'?chat(route.id):route.page==='discover'?discover():profilePage(); wireNav(root); }
+  function render() { const root=document.getElementById('app'); root.innerHTML=''; const screen=route.page==='boot'?boot():route.page==='crew'?crew():route.page==='chat'?chat(route.id):route.page==='discover'?discover():profilePage(); root.append(screen); wireNav(root); }
 
   function boot() {
     const e=document.createElement('section'); e.className='screen boot';
